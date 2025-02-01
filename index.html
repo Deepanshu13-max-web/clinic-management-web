@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clinic Management System</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <button onclick="showSection('register')">Register Patient</button>
+            <button onclick="showSection('schedule')">Schedule Appointment</button>
+            <button onclick="showSection('view-patients')">View Patients</button>
+            <button onclick="showSection('view-appointments')">View Appointments</button>
+        </nav>
+
+        <!-- Register Patient Section -->
+        <section id="register" class="section">
+            <h2>Register Patient</h2>
+            <form id="patientForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Schedule Appointment Section -->
+        <section id="schedule" class="section" style="display: none;">
+            <h2>Schedule Appointment</h2>
+            <form id="appointmentForm">
+                <label for="patientId">Patient ID:</label>
+                <input type="number" id="patientId" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+
+                <button type="submit">Schedule</button>
+            </form>
+        </section>
+
+        <!-- View Patients Section -->
+        <section id="view-patients" class="section" style="display: none;">
+            <h2>Patients List</h2>
+            <table id="patientsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- View Appointments Section -->
+        <section id="view-appointments" class="section" style="display: none;">
+            <h2>Appointments List</h2>
+            <table id="appointmentsTable">
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
